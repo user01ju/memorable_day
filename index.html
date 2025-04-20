@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人網站 - 應用程式與小工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>個人網站</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">首頁</a></li>
+                <li><a href="#memorable-dates">紀念日追蹤器</a></li>
+                <li><a href="#weather">天氣資訊</a></li>
+                <li><a href="#about">關於</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>歡迎來到我的個人網站</h2>
+            <p>這裡收集了各種實用的小工具和應用程式，希望能夠為您的生活帶來便利。</p>
+        </section>
+
+        <section id="memorable-dates">
+            <h2>紀念日追蹤器</h2>
+            <div class="date-input">
+                <input type="text" id="date-name" placeholder="紀念日名稱">
+                <input type="date" id="date-value">
+                <button id="add-date">新增紀念日</button>
+            </div>
+            <div id="dates-grid" class="dates-grid">
+                <!-- 紀念日將動態顯示在這裡 -->
+            </div>
+        </section>
+
+        <section id="weather">
+            <h2>天氣資訊</h2>
+            <div class="weather-controls">
+                <select id="city-select">
+                    <option value="">請選擇城市</option>
+                    <option value="基隆市">基隆市</option>
+                    <option value="台北市">台北市</option>
+                    <option value="新北市">新北市</option>
+                    <option value="桃園市">桃園市</option>
+                    <option value="新竹市">新竹市</option>
+                    <option value="新竹縣">新竹縣</option>
+                    <option value="苗栗縣">苗栗縣</option>
+                    <option value="台中市">台中市</option>
+                    <option value="彰化縣">彰化縣</option>
+                    <option value="南投縣">南投縣</option>
+                    <option value="雲林縣">雲林縣</option>
+                    <option value="嘉義市">嘉義市</option>
+                    <option value="嘉義縣">嘉義縣</option>
+                    <option value="台南市">台南市</option>
+                    <option value="高雄市">高雄市</option>
+                    <option value="屏東縣">屏東縣</option>
+                    <option value="台東縣">台東縣</option>
+                    <option value="花蓮縣">花蓮縣</option>
+                    <option value="宜蘭縣">宜蘭縣</option>
+                    <option value="澎湖縣">澎湖縣</option>
+                    <option value="金門縣">金門縣</option>
+                    <option value="連江縣">連江縣</option>
+                </select>
+                <button id="get-weather">取得天氣</button>
+                <button id="add-favorite-city">加入喜愛城市</button>
+            </div>
+            <div id="favorite-cities-list" class="favorite-cities"></div>
+            <div id="weather-info" class="weather-info">
+                <!-- 天氣資訊將顯示在這裡 -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 個人網站. 保留所有權利。</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

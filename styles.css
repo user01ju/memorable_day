@@ -1,0 +1,337 @@
+/* 全局樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft JhengHei', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* 頁首樣式 */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #34495e;
+}
+
+/* 主要內容區域 */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 紀念日追蹤器樣式 */
+.date-input {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+input[type="text"],
+input[type="date"] {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.dates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+/* 紀念日卡片樣式 */
+.date-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.date-card:nth-child(odd) {
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+}
+
+.date-card:nth-child(3n) {
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+}
+
+.date-card:nth-child(4n) {
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+.date-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.date-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.date-card p {
+    color: #34495e;
+    margin-bottom: 0.5rem;
+}
+
+.date-card .delete-btn {
+    background-color: #e74c3c;
+    margin-top: 1rem;
+    width: auto;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.9rem;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.date-card .delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* 天氣功能樣式 */
+.weather-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+#city-select {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    min-width: 200px;
+}
+
+#get-weather {
+    background-color: #2ecc71;
+}
+
+#get-weather:hover {
+    background-color: #27ae60;
+}
+
+.weather-info {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.weather-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.weather-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.weather-item h3 {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.weather-item p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* 頁尾樣式 */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #2c3e50;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .date-input {
+        flex-direction: column;
+    }
+    
+    input[type="text"],
+    input[type="date"],
+    button {
+        width: 100%;
+    }
+    
+    main {
+        margin-bottom: 4rem; /* 為固定頁尾留出空間 */
+    }
+}
+
+.favorite-cities {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.favorite-city-item {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.favorite-city-item:nth-child(odd) {
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+}
+
+.favorite-city-item:nth-child(3n) {
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+}
+
+.favorite-city-item:nth-child(4n) {
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+.favorite-city-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.favorite-city-item span {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.delete-favorite-city {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: flex-end;
+    margin-top: auto;
+}
+
+.delete-favorite-city:hover {
+    background-color: #c0392b;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.input-group button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.input-group button:hover {
+    background-color: #45a049;
+}
+
+#add-favorite-city {
+    background-color: #2196F3;
+}
+
+#add-favorite-city:hover {
+    background-color: #1976D2;
+}
+
+.weather-icon {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.weather-icon span {
+    font-size: 1rem;
+    margin-left: 10px;
+} 
